@@ -1,6 +1,6 @@
 <x-layout title='Séries'>
     <div class="mt-3 flex justify-between mb-5 items-center">
-        <h1 class='text-xl text-gray-200 font-semibold'>Lista de Séries</h1>
+        <h1 class='text-xl text-gray-800 font-semibold'>Lista de Séries</h1>
         <a href="{{ route('series.create') }}" class='font-semibold bg-green-700 text-white rounded-md shadow-xl hover:shadow-sm p-2'>Nova Série</a>
     </div>
 
@@ -14,15 +14,18 @@
     @endisset
 
     <div>
-        <ul class='border border-b-0 border-gray-600 bg-gray-800 shadow-xl'>
+        <ul class='border border-b-0 border-gray-300 rounded-xl overflow-hidden'>
             @foreach ($series as $serie)
-            <li class='flex justify-between hover:bg-gray-700 hover:text-green-600 hover:shadow-xl hover:text-black transition p-2 text-md text-gray-200 border-b border-gray-600'>{{ $serie->nome }}
-                <form action="{{ route('series.destroy', $serie->id) }}" method='post'>
-                    @csrf
-                    @method('DELETE')
-                    <button class='cursor-pointer hover:underline text-sm text-red-700 hover:text-red-500'>Excluir</button>
-                    <!-- <button class='cursor-pointer hover:underline text-sm text-yellow-700 hover:text-yellow-500'>Editar</button> -->
-                </form>
+            <li class='flex items-center justify-between hover:bg-gray-300 hover:text-black hover:shadow-xl transition p-2 text-md text-gray-800 border-b border-gray-300'>{{ $serie->nome }}
+                <span class='flex items-center gap-5'>
+                    <a href="{{ route('series.edit', $serie->id) }}" class='cursor-pointer hover:underline text-sm text-yellow-600 hover:text-yellow-500'>Editar</a>
+                    <form action="{{ route('series.destroy', $serie->id) }}" method='post'>
+                        @csrf
+                        @method('DELETE')
+                        <button class='cursor-pointer hover:underline text-sm text-red-700 hover:text-red-500'>Excluir</button>
+                        <!-- <button class='cursor-pointer hover:underline text-sm text-yellow-700 hover:text-yellow-500'>Editar</button> -->
+                    </form>
+                </span>
             </li>
             @endforeach
         </ul>
