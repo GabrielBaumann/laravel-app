@@ -10,7 +10,7 @@
     </style>
     <title>{{ $title }}</title>
 </head>
-<body class='bg-gray-100 max-w-[960px] mx-auto'>
+<body class='bg-gray-900 max-w-[960px] mx-auto'>
     <header class='flex justify-between items-center'>
         <svg class="w-20 h-20 text-orange-500" width="1280" height="308" viewBox="0 0 1280 308" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M50.2753 0H0V308.689H144.713V263.27H50.2753V0Z" fill="currentColor"></path>
@@ -21,7 +21,7 @@
             <path d="M948.281 103.192L888.386 260.557L828.489 103.192H780.224L858.441 308.689H918.331L996.546 103.192H948.281Z" fill="currentColor"></path>
             <path d="M1100.48 97.908C1042.13 97.908 995.937 146.279 995.937 205.944C995.937 271.9 1040.64 313.98 1106.59 313.98C1143.5 313.98 1167.06 299.745 1195.85 268.746L1163.66 243.621C1163.64 243.646 1139.36 275.802 1103.1 275.802C1060.96 275.802 1043.22 241.533 1043.22 223.803H1201.32C1209.62 155.913 1165.37 97.908 1100.48 97.908ZM1043.35 188.085C1043.71 184.13 1049.2 136.086 1100.1 136.086C1151.01 136.086 1157.19 184.123 1157.55 188.085H1043.35Z" fill="currentColor"></path>
         </svg>
-        <h1 class='text-xl text-gray-700'>Full Stack PHP Laravel</h1>
+        <h1 class='text-xl text-gray-400'>Full Stack PHP Laravel</h1>
     </header>
     <div class="h-full max-w-[960px] mx-auto">
         <div>
