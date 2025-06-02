@@ -24,6 +24,17 @@
         <h1 class='text-xl text-gray-700'>Full Stack PHP Laravel</h1>
     </header>
     <div class="h-full max-w-[960px] mx-auto">
+        <div>
+            @if ($errors->any())
+                <div class="flex gap-5 mb-5 text-md mt-5 p-5 bg-yellow-200 text-yellow-900 shadow-md">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
         {{ $slot }}
     </div>
 </body>

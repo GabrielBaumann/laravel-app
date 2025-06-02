@@ -1,9 +1,9 @@
 <form action="{{ $action }}" method='POST'>
     @csrf
 
-    @isset($nome)
+    @if($update)
     @method('PUT')
-    @endisset
+    @endif
     <div class="flex flex-col mb-5">
         <label for="nome" class='text-xl text-gray-800'>Nome:</label>
         <input type="text" 
