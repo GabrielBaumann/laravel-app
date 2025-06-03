@@ -11,7 +11,7 @@ class SeriesController extends Controller
 {
     public function index(Request $request)
     {
-        $series = Serie::query()->orderBy('nome')->get();
+        $series = Serie::all();
         $mensagemSucesso = session('mensagem.sucesso');
 
         return view('series.index')->with('series', $series)->with('mensagemSucesso', $mensagemSucesso);
@@ -22,7 +22,7 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
-    public function store(SeriesFormRequest $request)
+    public function store(SeriesFormRequest $request) 
     {
         $serie = Serie::create($request->all());
 

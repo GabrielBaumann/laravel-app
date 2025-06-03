@@ -1,6 +1,6 @@
 <x-layout title='Séries'>
     <div class="mt-3 flex justify-between mb-5 items-center">
-        <h1 class='text-xl text-gray-200 font-semibold'>Lista de Séries</h1>
+        <h1 class='text-3xl text-gray-300 font-semibold'>Lista de Séries</h1>
         <a href="{{ route('series.create') }}" class='font-semibold bg-green-700 text-white rounded-md shadow-xl hover:shadow-sm p-2'>Nova Série</a>
     </div>
 
@@ -16,14 +16,13 @@
     <div>
         <ul class='border border-b-0 border-gray-700 rounded-xl overflow-hidden bg-gray-800'>
             @foreach ($series as $serie)
-            <li class='flex items-center justify-between hover:bg-gray-700 hover:text-white hover:shadow-xl transition p-2 text-md text-gray-200 border-b border-gray-700'>{{ $serie->nome }}
+            <li class='flex items-center justify-between transition-all hover:bg-gradient-to-r from-gray-700 to-gray-900 hover:shadow-xl p-2 text-md text-gray-200 border-b border-gray-700'>{{ $serie->nome }}
                 <span class='flex items-center gap-5'>
                     <a href="{{ route('series.edit', $serie->id) }}" class='cursor-pointer hover:underline text-sm text-yellow-600 hover:text-yellow-500'>Editar</a>
                     <form action="{{ route('series.destroy', $serie->id) }}" method='post'>
                         @csrf
                         @method('DELETE')
                         <button class='cursor-pointer hover:underline text-sm text-red-700 hover:text-red-500'>Excluir</button>
-                        <!-- <button class='cursor-pointer hover:underline text-sm text-yellow-700 hover:text-yellow-500'>Editar</button> -->
                     </form>
                 </span>
             </li>
