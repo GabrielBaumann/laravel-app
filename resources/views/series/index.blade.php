@@ -16,7 +16,8 @@
     <div>
         <ul class='border border-b-0 border-gray-700 rounded-xl overflow-hidden bg-gray-800'>
             @foreach ($series as $serie)
-            <li class='flex items-center justify-between transition-all hover:bg-gradient-to-r from-gray-700 to-gray-900 hover:shadow-xl p-2 text-md text-gray-200 border-b border-gray-700'>{{ $serie->nome }}
+            <li class='flex items-center justify-between transition-all hover:bg-gray-700 hover:shadow-xl p-2 text-md text-gray-200 border-b border-gray-700'>
+                <a href="{{ route('seasons.index', $serie->id) }}" class='hover:text-orange-500'>{{ $serie->nome }}</a>
                 <span class='flex items-center gap-5'>
                     <a href="{{ route('series.edit', $serie->id) }}" class='cursor-pointer hover:underline text-sm text-yellow-600 hover:text-yellow-500'>Editar</a>
                     <form action="{{ route('series.destroy', $serie->id) }}" method='post'>
